@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 import kata.sg.fr.bank_account.data.Account;
 import kata.sg.fr.bank_account.exception.NotEnoughMoneyException;
+import kata.sg.fr.bank_account.repo.AccountRepository;
 import kata.sg.fr.bank_account.service.AccountService;
 import kata.sg.fr.bank_account.service.impl.AccountServiceImp;
 
@@ -14,8 +15,10 @@ import kata.sg.fr.bank_account.service.impl.AccountServiceImp;
 public class Main 
 {
     public static void main( String[] args ) {
+    	
+    	AccountRepository accountRepository =  new AccountRepository();
 
-    	AccountService accountService = new AccountServiceImp() ;
+    	AccountService accountService = new AccountServiceImp(accountRepository) ;
     	
     	Account account = new Account(20.0, new ArrayList<>());
     	
