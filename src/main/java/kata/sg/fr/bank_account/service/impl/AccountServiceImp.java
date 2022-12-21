@@ -17,13 +17,13 @@ public class AccountServiceImp implements AccountService {
     @Override
     public void deposit(Account account, double amount) {
         accountRepository.addAmount(account, amount);
-        accountRepository.addOperation(account, new Deposit(amount));
+        accountRepository.addOperation(account, new Deposit(amount,account.getBalance()));
     }
 
     @Override
     public void withdraw(Account account, double amount) throws NotEnoughMoneyException {
         accountRepository.retrieveAmount(account, amount);
-        accountRepository.addOperation(account, new Withdrawal(amount));
+        accountRepository.addOperation(account, new Withdrawal(amount,account.getBalance()));
     }
 
     @Override

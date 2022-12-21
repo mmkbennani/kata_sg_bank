@@ -5,17 +5,10 @@ import java.time.LocalDate;
 public abstract class Operation {
     private double amount;
     private LocalDate date;
-    private String type_op;
+    private double balance;
 
 
-
-
-    public Operation(double amount, LocalDate date, String type_op) {
-		super();
-		this.amount = amount;
-		this.date = date;
-		this.type_op = type_op;
-	}
+    
 
 	public double getAmount() {
         return amount;
@@ -32,19 +25,23 @@ public abstract class Operation {
     public void setDate(LocalDate date) {
         this.date = date;
     }
-
-	public String getType_op() {
-		return type_op;
+	
+	public double getBalance() {
+		return balance;
 	}
 
-	public void setType_op(String type_op) {
-		this.type_op = type_op;
+	public void setBalance(double balance) {
+		this.balance = balance;
 	}
 
-	@Override
-	public String toString() {
-		return "Operation [amount=" + amount + ", date=" + date + ", type=" + type_op + "]";
+	public Operation(double amount, LocalDate date, double balance) {
+		super();
+		this.amount = amount;
+		this.date = date;
+		this.balance = balance;
 	}
+
+
     
     
 

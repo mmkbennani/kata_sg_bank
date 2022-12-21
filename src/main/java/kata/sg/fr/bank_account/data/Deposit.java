@@ -5,8 +5,8 @@ import java.time.LocalDate;
 
 public class Deposit extends Operation {
 
-    public Deposit(double amount) {
-        super(amount, LocalDate.now(),"D");
+    public Deposit(double amount, double balance) {
+        super(amount, LocalDate.now(),balance);
     }
 
     @Override
@@ -14,6 +14,7 @@ public class Deposit extends Operation {
         return "Deposit{" +
                 "+" + this.getAmount() +
                 ", date=" + this.getDate() +
+                ", balance=" + this.getBalance() +
                 "}";
     }
 }
